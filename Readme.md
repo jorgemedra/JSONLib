@@ -15,7 +15,7 @@ Link the library file *libJSONLib.so*
 ##Parse a JSON Data
 Use the class JSONFactory to parse a JSON Data, as sample shows:
 
-´´´
+```
 int errCode;
 string errDesc;
 string json_txt;
@@ -29,7 +29,7 @@ if(errCode == ERR_C_OK)
 {
 	JSONObject* obj = (JSONObject*) out;
 }
-´´´
+```
 It will return a JSONValue object which must be cast to its corret type. The available types are:
 - JSONNull
 - JSONBool
