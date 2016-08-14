@@ -19,6 +19,8 @@ Use the class JSONFactory to parse a JSON Data, as sample shows:
 int errCode;
 string errDesc;
 string json_txt;
+JSONFactory factory;
+JSONValue* out;
 	
 json_txt = ".. JSON DATA ..";
 cout << "JSON MSJ: ("<< json_txt <<")." << endl << endl;
