@@ -41,6 +41,12 @@ It will return a JSONValue object which must be cast to its corret type. The ava
 - JSONObject
 - JSONArray
 
+The parameters of parse method are:
+
+- JSON Data. A string data type with JSON Data to be parse.
+- errCode. A int pointer to get the error if there is a problem with parse data.
+- errDesc. A string pointer to get de error description if there is a problem with parse data.
+
 ##Identify JSONValue type
 
 Use method JSONValueType getType() to identify the JSONValue Type, as sample shows:
@@ -95,6 +101,41 @@ void TEST::print(int level, JSONValue* val, int index)
 		}
 	}
 }
+```
+##Query Data
+
+You can query data from JSONObject and JSONArray, using the key name or index, as sample shows:
+
+```C++
+	std::ostringstream outStr1;
+	outStr1 << "{\"Null Value\":null,\"Boolean Value\" : true ,\"Integer Number\": 12  " << endl;
+	outStr1 << ", \"Double Number\":231.45 , \"Double Number Exp\":\-2.45E-22,\"String Value\":\"My String\" }" << endl;
+	json_txt = outStr1.str();
+	cout << "JSON MSJ: ("<< json_txt <<")." << endl << endl;
+
+	out = factory.parseJSON(json_txt, &errCode, &errDesc);
+
+	if(errCode == ERR_C_OK)
+	{
+
+		JSONObject* obj = (JSONObject*) out;
+		cout << "\tDouble Number Exp  = [" << ((JSONNumber*) obj->operator []("Double Number Exp"))->dlbValue() << "]" << endl;
+		cout << "\tDouble Number      = [" << ((JSONNumber*) obj->operator []("Double Number"))->dlbValue() << "]" << endl;
+		cout << "\tInteger Number     = [" << ((JSONNumber*) obj->operator []("Integer Number"))->intValue() << "]" << endl;
+		cout << "\tNull Value         = [" << ((JSONNull*) obj->operator []("Null Value"))->toJSONValue() << "]" << endl;
+		cout << "\tString Value       = [" << ((JSONString*) obj->operator []("String Value"))->value() << "]" << endl;
+
+
+
+		cout << endl << endl;
+		cout << "JSON : ("<< out->toJSON() << ")." << endl;
+	}
+	else
+	{
+		cout << "JSON ERROR: Code ("<< errCode << "): [" << errDesc << "]" << endl;
+		return false;
+	}
+	
 ```
 
 
