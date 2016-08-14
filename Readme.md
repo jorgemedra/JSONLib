@@ -109,7 +109,7 @@ You can query data from JSONObject and JSONArray, using the key name or index, a
 ```C++
 	std::ostringstream outStr1;
 	outStr1 << "{\"Null Value\":null,\"Boolean Value\" : true ,\"Integer Number\": 12  " << endl;
-	outStr1 << ", \"Double Number\":231.45 , \"Double Number Exp\":\-2.45E-22,\"String Value\":\"My String\" }" << endl;
+	outStr1 << ", \"Double Number\":231.45 , \"Double Number Exp\":-2.45E-22,\"String Value\":\"My String\" }" << endl;
 	json_txt = outStr1.str();
 	cout << "JSON MSJ: ("<< json_txt <<")." << endl << endl;
 
