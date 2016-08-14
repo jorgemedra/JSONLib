@@ -15,7 +15,7 @@ Link the library file *libJSONLib.so*
 ##Parse a JSON Data
 Use the class JSONFactory to parse a JSON Data, as sample shows:
 
-```
+```C++
 int errCode;
 string errDesc;
 string json_txt;
