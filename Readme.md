@@ -33,12 +33,18 @@ if(errCode == ERR_C_OK)
 }
 ```
 It will return a JSONValue object which must be cast to its corret type. The available types are:
+
 - JSONNull
 - JSONBool
 - JSONNumber
 - JSONString
 - JSONObject
 - JSONArray
+
+##Identify JSONValue type
+
+Use method JSONValueType getType() to identify the JSONValue Type, as sample shows:
+
 
 
 
