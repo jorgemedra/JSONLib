@@ -8,6 +8,7 @@
 
 #include "TESTW.h"
 
+using namespace std;
 using namespace json::wide;
 using namespace json::common;
 
@@ -94,6 +95,11 @@ bool TESTW::json_parse_2()
         wcout << L"GlossSeeAlso Para:" << innerObj[L"para"].toString() << endl;
         wcout << L"GlossSeeAlso Ittem 1:" << innerObj[L"GlossSeeAlso"][0].toString() << endl;
         wcout << L"GlossSeeAlso Ittem 2:" << innerObj[L"GlossSeeAlso"][1].toString() << endl;
+        
+        JSONObject nItem;
+        nItem = L"My New Item";
+        innerObj[L"GlossSeeAlso"]+= nItem;
+        wcout << L"GlossSeeAlso Ittem 3:" << innerObj[L"GlossSeeAlso"][2].toString() << endl;
         
         wcout << endl << endl;
         wcout << L"JSON : ("<< obj.toString() << L")." << endl;

@@ -11,6 +11,7 @@
 #include <math.h>
 #include <fstream>
 
+using namespace std;
 using namespace json::utf8;
 using namespace json::common;
 
@@ -237,34 +238,47 @@ bool JSONObject::boolValue()
  Operator Equal (=)
 ********************/
 
-void JSONObject::operator=(int i)
+JSONObject& JSONObject::operator=(int i)
 {
     value(static_cast<double>(i));
+    return *this;
 }
 
-void JSONObject::operator=(long l)
+JSONObject& JSONObject::operator=(long l)
 {
     value(static_cast<double>(l));
+    return *this;
 }
 
-void JSONObject::operator=(float f)
+JSONObject& JSONObject::operator=(float f)
 {
     value(static_cast<double>(f));
+    return *this;
 }
 
-void JSONObject::operator=(double d)
+JSONObject& JSONObject::operator=(double d)
 {
     value(d);
+    return *this;
 }
 
-void JSONObject::operator=(bool b)
+JSONObject& JSONObject::operator=(bool b)
 {
     value(b);
+    return *this;
 }
 
-void JSONObject::operator=(string s)
+JSONObject& JSONObject::operator=(string s)
 {
     value(s);
+    return *this;
+}
+
+
+JSONObject& JSONObject::operator=(const char* str)
+{
+    value(string(str));
+    return *this;
 }
 
 

@@ -12,10 +12,9 @@
 #include <stdio.h>
 #include <iostream>
 
+using namespace std;
 using namespace json::wide;
 using namespace json::common;
-using namespace std;
-
 
 std::wstring JSONParser::wconvert(std::string str)
 {

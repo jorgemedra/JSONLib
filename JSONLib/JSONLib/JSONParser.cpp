@@ -14,11 +14,10 @@
 #include <iostream>
 //#include <type_traits>
 
+using namespace std;
 using namespace json;
 using namespace json::utf8;
 using namespace json::common;
-using namespace std;
-
 
 char JSONParser::getCurrentChar()
 {

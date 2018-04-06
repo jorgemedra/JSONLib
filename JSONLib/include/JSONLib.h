@@ -26,14 +26,11 @@
 #include<map>
 
 
-using namespace std;
-
 namespace json
 {
-    
     namespace common
     {
-        const string VERSION = "JSONLib V2.0";
+        const std::string VERSION = "JSONLib V2.0";
         enum class JSONType{EMPTY = 0, String, Number, Boolean, Object, Array};
         
         const uint   ERR_C_OK           = 0;
@@ -72,8 +69,8 @@ namespace json
             bool _bInteger;
             int _lastIndexInKeys;
             std::string _lastKey;
-            vector<pair<std::string,JSONObject>> _array;
-            map<std::string, vector<int>> _keys;
+            std::vector<std::pair<std::string,JSONObject>> _array;
+            std::map<std::string, std::vector<int>> _keys;
             
             std::string  _strValue;
             bool    _boolValue;
@@ -105,13 +102,13 @@ namespace json
             void value(bool b);
             void value(std::string s);
             
-            void operator=(int);
-            void operator=(long);
-            void operator=(float);
-            void operator=(double);
-            
-            void operator=(bool);
-            void operator=(std::string);
+            JSONObject& operator=(int);
+            JSONObject& operator=(long);
+            JSONObject& operator=(float);
+            JSONObject& operator=(double);
+            JSONObject& operator=(bool);
+            JSONObject& operator=(std::string);
+            JSONObject& operator=(const char*);
             
             std::string strValue();
             double numValue();
@@ -139,8 +136,8 @@ namespace json
             bool _bInteger;
             int _lastIndexInKeys;
             std::wstring _lastKey;
-            vector<pair<std::wstring,JSONObject>> _array;
-            map<std::wstring, vector<int>> _keys;
+            std::vector<std::pair<std::wstring,JSONObject>> _array;
+            std::map<std::wstring, std::vector<int>> _keys;
             
             std::wstring  _strValue;
             bool    _boolValue;
@@ -172,13 +169,13 @@ namespace json
             void value(bool b);
             void value(std::wstring s);
             
-            void operator=(int);
-            void operator=(long);
-            void operator=(float);
-            void operator=(double);
-            
-            void operator=(bool);
-            void operator=(std::wstring);
+            JSONObject& operator=(int);
+            JSONObject& operator=(long);
+            JSONObject& operator=(float);
+            JSONObject& operator=(double);
+            JSONObject& operator=(bool);
+            JSONObject& operator=(std::wstring);
+            JSONObject& operator=(const wchar_t*);
             
             std::wstring strValue();
             double numValue();

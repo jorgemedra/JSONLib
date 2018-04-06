@@ -1,5 +1,6 @@
 #include "TEST.h"
 
+using namespace std;
 using namespace json::utf8;
 using namespace json::common;
 
@@ -87,7 +88,7 @@ bool TEST::json_parse_2()
         cout << "GlossSeeAlso Ittem 2:" << innerObj["GlossSeeAlso"][1].toString() << endl;
         
         JSONObject nItem;
-        nItem = string("My New Item");
+        nItem = "My New Item";
         innerObj["GlossSeeAlso"]+= nItem;
         cout << "GlossSeeAlso Ittem 3:" << innerObj["GlossSeeAlso"][2].toString() << endl;
         
