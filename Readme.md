@@ -25,30 +25,30 @@ This code was developed with:
 
 ### Build all
 
-´´´bash
+```bash
 $make
-´´´
+```
 
 ### Build Sample
 
-´´´bash
+```bash
 $make sample
-´´´
+```
 
 ## Cleaning
 
-´´´bash
+```bash
 $make clean
-´´´
+```
 ## Install / Uninstall
 
-´´´bash
+```bash
 $sudo make install
-´´´
+```
 
-´´´bash
+```bash
 $sudo make uninstall
-´´´
+```
 
 > If you want use it library with another OS just recompile the library.
 
