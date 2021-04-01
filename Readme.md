@@ -1,4 +1,4 @@
-#JSONLib for C++ 2.0
+#JSONLib for C++ 2.1
 
 JSONLib is a dynamic library for c++ which allows parse,read and build data with JSON format, using [ECMAC-404 standar for JSON](https://www.json.org/index.html), and can read file with *UTF-8* or *UTF-16* content.
 
@@ -12,12 +12,47 @@ The repository has 2 projects
 
 This code was developed with:
 
-+ *XCode Version 8.0*
-+ *C++11.*
++ **Visual Studio Code**
++ **gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0**
++ *PlugIn* **C/C++ for Visual Studio Code**
++ **C++17.**
++ **GNU gdb (Ubuntu 9.2-0ubuntu1~20.04) 9.2**
+
+
+# Building
+
+## Compiling
+
+### Build all
+
+´´´bash
+$make
+´´´
+
+### Build Sample
+
+´´´bash
+$make sample
+´´´
+
+## Cleaning
+
+´´´bash
+$make clean
+´´´
+## Install / Uninstall
+
+´´´bash
+$sudo make install
+´´´
+
+´´´bash
+$sudo make uninstall
+´´´
 
 > If you want use it library with another OS just recompile the library.
 
-Include Header file **JSONLib.h** (*JSONLib/include/*) and link with the library file **libJSONLib.so** (*JSONLib/Build/Products/Release*).
+Include Header file **JSONLib.h** (*JSONLib/include/*) and link with the library file **libJSONLib.so** (*usr/lib/*).
 
 #How to use
 

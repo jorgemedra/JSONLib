@@ -31,7 +31,8 @@ namespace json
     namespace common
     {
         const std::string VERSION = "JSONLib V2.0";
-        enum class JSONType{EMPTY = 0, String, Number, Boolean, Object, Array};
+        //enum class JSONType:size_t {EMPTY = 0, String, Number, Boolean, Object, Array};        
+        enum class JSONType:size_t {EMPTY = 0, String=1, Number=2, Boolean=3, Object=4, Array=5};        
         
         const uint   ERR_C_OK           = 0;
         const std::string ERR_D_OK           = "OK\0";

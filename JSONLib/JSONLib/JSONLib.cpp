@@ -139,7 +139,8 @@ string JSONObject::printObject(bool asArray)
     out << (asArray?"[":"{");
     
     bool bi = false;
-    for(pair<string,JSONObject&> itm: _array)
+    //for(pair<string,JSONObject&> itm: _array)
+    for(auto itm: _array)
     {
         if(bi) out << ",";
         else bi=true;
@@ -287,9 +288,7 @@ JSONObject& JSONObject::operator[](int index)
     if(index < 0 || index >= _array.size())
         throw out_of_range("Index of item was out of bound.");
     
-    pair<string,JSONObject&> item = _array[index];
-    
-    return item.second;
+    return _array[index].second;
 }
 
 JSONObject& JSONObject::operator[](string key)
@@ -305,8 +304,13 @@ JSONObject& JSONObject::operator[](string key)
         index = idxs[_lastIndexInKeys];
     }
     else
-        throw invalid_argument("There is no Key created into JSONObject.");
-    
+    {
+        string errstr;
+        errstr.append("There is no Key [");
+        errstr.append(key);
+        errstr.append("] created into JSONObject.");
+        throw invalid_argument(errstr);
+    }
     
     _lastKey = key;
     return (*this)[index];
