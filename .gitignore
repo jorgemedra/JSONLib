@@ -1,4 +1,6 @@
 
-./JSONLib/[Oo]bj
-./JSONLib/[Bb]in
-./JSONLib/[Ll]ib
+#For JSONLib
+JSONLib/[Oo]bj
+JSONLib/[Bb]in
+JSONLib/[Ll]ib
+JSONLib/[Ii]nclude

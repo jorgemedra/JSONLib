@@ -101,18 +101,6 @@ uninstall: /usr/lib/$(TARGET_LIB)
 	rm -f /usr/lib/$(TARGET_LIB)
 	@ldconfig
 
-# ****************************
-# Seccion para debugeo
-# ****************************
-debug: $(OBJS_DBG_SMP)
-	$(CC) -g $(LFLAGS_SMP) $(OBJS_DBG_SMP) -o $(DBG_DIR)/$(TARGET_SMP)	
-
-$(DBG_DIR)/%.o: $(SRC_SMP)/%.cpp $(INC_DIR)/JSONLib.h	
-	@mkdir -p $(DBG_DIR)
-	$(CC) -c $(CPPFLAGSDEBUG)  -I$(INC_DIR) -I$(SRC_SMP) $< -o $@
-
-
-
 clean:
 	rm -rf $(OBJ_DIR)
 	rm -rf $(BIN_DIR)
