@@ -1,0 +1,82 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: Clean Debug",
+			"command": "rm",
+			"args": [
+				"-rf",
+				"${workspaceFolder}/JSONLib/Debug/*.*"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compilador: g++"
+		},
+		{
+			"type": "cppbuild",
+			"label": "C/C++: [OSX] g++ Compile JSONLib for Debug",
+			"command": "g++",
+			"args": [
+				"-g",
+				"-fPIC",
+				"-std=c++17",
+				"-Wall",
+				"-MD",
+				"-shared", //To create a Shared Library
+				"-lstdc++",
+				"${workspaceFolder}/JSONLib/src/JSONUnicode.cpp",
+				"${workspaceFolder}/JSONLib/src/JSONParser.cpp",
+				"${workspaceFolder}/JSONLib/src/JSONParserW.cpp",
+				"${workspaceFolder}/JSONLib/src/JSONLib.cpp",
+				"${workspaceFolder}/JSONLib/src/JSONLibW.cpp",
+				"-o",
+				"${workspaceFolder}/JSONLib/Debug/libJSONLib.so"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compilador: g++"
+		},
+		{
+			"type": "cppbuild",
+			"label": "C/C++: [OSX] g++ Compile Sample for Debug",
+			"command": "g++",
+			"args": [
+				"-g",
+				"-fPIC",
+				"-std=c++17",
+				"-Wall",
+				"-MD",
+				//"-lstdc++",
+				"${workspaceFolder}/JSONLib/Sample/main.cpp",
+				"${workspaceFolder}/JSONLib/Sample/TEST.cpp",
+				"${workspaceFolder}/JSONLib/Sample/TestW.cpp",
+				"-o",
+				"${workspaceFolder}/JSONLib/Debug/sample",
+				"-I${workspaceFolder}/JSONLib/src",
+				"-L${workspaceFolder}/JSONLib/Debug",
+				"-lstdc++",
+				"-lJSONLib"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compilador: g++",
+			"dependsOn": "C/C++: [OSX] g++ Compile JSONLib for Debug"
+		}
+	]
+}
