@@ -4,7 +4,7 @@ JSONLib is a dynamic library for c++ which allows parse,read and build data with
 
 The repository has 2 projects
 
-+ **JSONLib** is the main project and it contains the source code and distribution file for JSONLib.
++ **src** is the main project and it contains the source code and distribution file for JSONLib.
 + **Sample** project has a sample to use the JSONLib.
 #Using JSONLib
 
